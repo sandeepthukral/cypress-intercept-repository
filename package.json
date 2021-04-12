@@ -1,0 +1,21 @@
+{
+  "name": "cypress-intercept-repository",
+  "version": "0.0.1",
+  "description": "Repo for the cypress intercept workshop",
+  "main": "index.js",
+  "scripts": {
+    "cypress:run": "cypress run",
+    "cypress:open": "cypress open",
+    "lint": "tslint 'cypress/**/*.ts'"
+  },
+  "keywords": [
+    "cypress"
+  ],
+  "author": "Sandeep Singh Thukral",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^7.0.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.2.4"
+  }
+}

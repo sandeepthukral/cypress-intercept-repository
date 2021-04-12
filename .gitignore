@@ -1,0 +1,11 @@
+# node
+node_modules
+
+# cypress
+cypress/screenshots
+cypress/videos
+
+# reports
+## allure
+allure-report
+allure-results

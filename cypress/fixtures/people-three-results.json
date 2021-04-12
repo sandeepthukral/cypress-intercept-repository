@@ -1,0 +1,49 @@
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "name": "Luke Skywalker",
+            "height": "172",
+            "mass": "77",
+            "hair_color": "blond",
+            "skin_color": "fair",
+            "eye_color": "blue",
+            "birth_year": "19BBY",
+            "gender": "male",
+            "homeworld": "http://swapi.dev/api/planets/1/",
+            "created": "2014-12-09T13:50:51.644000Z",
+            "edited": "2014-12-20T21:17:56.891000Z",
+            "url": "http://swapi.dev/api/people/1/"
+        },
+        {
+            "name": "Anakin Skywalker",
+            "height": "188",
+            "mass": "84",
+            "hair_color": "blond",
+            "skin_color": "fair",
+            "eye_color": "blue",
+            "birth_year": "41.9BBY",
+            "gender": "male",
+            "homeworld": "http://swapi.dev/api/planets/1/",
+            "created": "2014-12-10T16:20:44.310000Z",
+            "edited": "2014-12-20T21:17:50.327000Z",
+            "url": "http://swapi.dev/api/people/11/"
+        },
+        {
+            "name": "Shmi Skywalker",
+            "height": "163",
+            "mass": "unknown",
+            "hair_color": "black",
+            "skin_color": "fair",
+            "eye_color": "brown",
+            "birth_year": "72BBY",
+            "gender": "female",
+            "homeworld": "http://swapi.dev/api/planets/1/",
+            "created": "2014-12-19T17:57:41.191000Z",
+            "edited": "2014-12-20T21:17:50.401000Z",
+            "url": "http://swapi.dev/api/people/43/"
+        }
+    ]
+}
