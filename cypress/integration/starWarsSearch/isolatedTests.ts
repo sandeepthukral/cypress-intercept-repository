@@ -1,9 +1,11 @@
 describe('isolated Tests', () => {
     it('should trigger the search with the correct parameters for people search', () => {
         // intercept the api request and check the URL
-        cy.intercept('https://swapi.py4e.com/api/**', (req) => {
-            expect(req.url).to.contain('/people/?search=Luke');
-        }).as('search');
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/people/?search=Luke',
+            { fixture: 'no-results.json'}
+        );
 
         // search
         cy.visit('https://starwarssearch.coding42.cyou/');
@@ -15,9 +17,11 @@ describe('isolated Tests', () => {
 
     it('should trigger the search with the correct parameters for planet search', () => {
         // intercept the api request and check the URL
-        cy.intercept('https://swapi.py4e.com/api/**', (req) => {
-            expect(req.url).to.contain('/planets/?search=Luke');
-        }).as('search');
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/planets/?search=Luke',
+            { fixture: 'no-results.json'}
+        );
 
         // search
         cy.visit('https://starwarssearch.coding42.cyou/');
@@ -29,7 +33,11 @@ describe('isolated Tests', () => {
 
     it('should display Not Found when no search result is returned', () => {
         // intercept the api request and stub the response to 'no results'
-        cy.intercept('https://swapi.py4e.com/api/**', {fixture: 'no-results.json'});
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/**',
+            {fixture: 'no-results.json'}
+        );
 
         // search
         cy.visit('https://starwarssearch.coding42.cyou/');
@@ -44,7 +52,11 @@ describe('isolated Tests', () => {
 
     it('should display one person when one search result is returned', () => {
         // intercept the api request and stub the response to 'one result'
-        cy.intercept('https://swapi.py4e.com/api/**', {fixture: 'people-one-result.json'});
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/**',
+            {fixture: 'people-one-result.json'}
+        );
 
         // search for person
         cy.visit('https://starwarssearch.coding42.cyou/');
@@ -64,7 +76,11 @@ describe('isolated Tests', () => {
 
     it('should display three persons when three search result are returned', () => {
         // intercept the api request and stub the response to 'three results'
-        cy.intercept('https://swapi.py4e.com/api/**', { fixture: 'people-three-results.json' }).as('search');
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/**',
+            { fixture: 'people-three-results.json' }
+        );
 
         // search for person
         cy.visit('https://starwarssearch.coding42.cyou/');
@@ -82,9 +98,11 @@ describe('isolated Tests', () => {
 
     it('should display the Loading... message when searching', () => {
         // introduce a delay of 2 sec in the response
-        cy.intercept('https://swapi.py4e.com/api/**',
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/**',
             { fixture: 'people-three-results.json', delay: 2000 }
-        ).as('search');
+        );
 
         // search for person
         cy.visit('https://starwarssearch.coding42.cyou/');

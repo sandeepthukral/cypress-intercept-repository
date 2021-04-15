@@ -1,7 +1,10 @@
 describe('e2e tests', () => {
     it('should show Not Found message when no data is returned', () => {
         // set the intercept in 'spy' mode
-        cy.intercept('https://swapi.py4e.com/api/**').as('search');
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/**'
+        ).as('search');
 
         // Search for planet - blah - returns no result
         cy.visit('https://starwarssearch.coding42.cyou/');
@@ -17,7 +20,10 @@ describe('e2e tests', () => {
 
     it('should display one person when one search result is returned', () => {
         // set the intercept in 'spy' mode
-        cy.intercept('https://swapi.py4e.com/api/**').as('search');
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/**'
+        ).as('search');
 
         // search for people - Luke - returns one result
         cy.visit('https://starwarssearch.coding42.cyou/');
@@ -35,11 +41,14 @@ describe('e2e tests', () => {
 
     it('should display the Leading message when searching', () => {
         // introduce a delay of 2 sec in the response
-        cy.intercept('https://swapi.py4e.com/api/**', (req) => {
-            req.reply((res) => {
-                res.delay = 2000;
-                res.send();
-            })
+        cy.intercept(
+            'GET',
+            'https://swapi.py4e.com/api/**',
+            (req) => {
+                req.reply((res) => {
+                    res.delay = 2000;
+                    res.send();
+                })
         });
 
         // search for people - Skywalker - returns one result
