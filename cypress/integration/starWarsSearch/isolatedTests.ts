@@ -1,6 +1,6 @@
 describe('isolated Tests', () => {
     it('should trigger the search with the correct parameters for people search', () => {
-        // intercept the api request and check the URL
+        // intercept the api with the correct URL and parameters
         cy.intercept(
             'GET',
             'https://swapi.py4e.com/api/people/?search=Luke',
@@ -16,7 +16,7 @@ describe('isolated Tests', () => {
     });
 
     it('should trigger the search with the correct parameters for planet search', () => {
-        // intercept the api request and check the URL
+        // intercept the api with the correct URL and parameters
         cy.intercept(
             'GET',
             'https://swapi.py4e.com/api/planets/?search=Luke',

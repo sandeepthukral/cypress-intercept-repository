@@ -39,7 +39,7 @@ describe('e2e tests', () => {
         cy.get('[data-testid=character-name]').should('have.text', 'Luke Skywalker');
     })
 
-    it('should display the Leading message when searching', () => {
+    it('should display the Loading message when searching', () => {
         // introduce a delay of 2 sec in the response
         cy.intercept(
             'GET',
